@@ -1,0 +1,38 @@
+{% extends 'Base/base.html' %}
+{% block main-content %}
+<div class="row justify-content-between wizard-wrapper mb-4 shadow-sm ">
+
+  <table class="table">
+    <center>
+      <h1>Withdraw Details</h1>
+    </center>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Amount</th>
+        <td scope="col">Date</td>
+        <td scope="col">Last Updated</td>
+        <td scope="col">Status</td>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in withdraw %}
+      <tr>
+        
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{i.amount}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.last_updated}}</td>
+        <td>{{i.withdraw_request}}</td>
+        
+        <td></td>
+    </tr>
+    {% endfor %}
+    
+     
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock main-content %}
